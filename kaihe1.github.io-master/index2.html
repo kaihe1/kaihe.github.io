@@ -1,0 +1,44 @@
+<html>
+<head>   
+   <style> 
+    h1{
+      font-size:70px;
+    }
+    .tips{
+      font-size:20px;
+      color:tomato;
+    }
+</style>
+</head>
+    <body>
+        <h1><center>一番お肉</center></h1>
+        <br>
+        <h1><center>Your total is:</center></h1>
+        <center> <p id="price"></p></center>
+        <center> <button onclick="tip()" class="tips">Tips : 15%</button></center>
+        <center> <button onclick="tip2()" class="tips">Tips : 20%</button></center>
+       
+        <script>
+          var steak = Number(localStorage.getItem("tota1"));
+          var salmon= Number(localStorage.getItem("tota2"));
+          var chicken = Number(localStorage.getItem("tota3"));
+          var shrimp = Number(localStorage.getItem("tota4"));
+          var pork = Number(localStorage.getItem("tota5"));
+          var goat = Number(localStorage.getItem("tota6"));
+          var totalp = steak + salmon + chicken + shrimp + pork + goat;
+          
+          document.getElementById('price').innerHTML = totalp.toFixed(2);
+          
+          function tip(){
+            var newT = totalp * 1.15;
+            document.getElementById('price').innerHTML = newT.toFixed(2);
+          }
+          function tip2(){
+            var newT = totalp * 1.25;
+            document.getElementById('price').innerHTML = newT.toFixed(2);
+          }
+
+        </script>
+  
+    </body>
+</html>
